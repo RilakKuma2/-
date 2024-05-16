@@ -21,7 +21,8 @@
     </style>
 </head>
 <body>
-    <h1>멀티 적용 점수 배율=<br>리더+(나머지멤버)*0.2</h1>
+    <h1>멀티 적용 점수 배율=
+	<br>리더+(나머지멤버)*0.2</h1>
     <form id="numberForm">
     <label>리더: <input type="number" id="num1" required></label>
     <label>멤버 2: <input type="number" id="num2" required></label>
@@ -41,8 +42,9 @@
 
             var totalSum = num1 + num2 + num3 + num4 + num5;
             var internalValue = num1 + (num2 + num3 + num4 + num5) * 0.2;
+			var internal2 = internalValue/100+1
 
-            document.getElementById('result').innerHTML = '멀티 배율 : ' + internalValue + '%' +
+            document.getElementById('result').innerHTML = '멀티 배율 : ' + internalValue + '%' + ' = ' + internal2 + '배' +
                 '<br>내부합 : ' + totalSum;
         }
 
