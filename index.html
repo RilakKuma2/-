@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 계산</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        label, input {
+            display: block;
+            margin: 10px 0;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>멀티 적용 점수 배율=리더+(나머지멤버)*0.2</h1>
+    <form id="numberForm">
+    <label>리더: <input type="number" id="num1" required></label>
+    <label>멤버 2: <input type="number" id="num2" required></label>
+    <label>멤버 3: <input type="number" id="num3" required></label>
+    <label>멤버 4: <input type="number" id="num4" required></label>
+    <label>멤버 5: <input type="number" id="num5" required></label>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function calculateResult() {
+            var num1 = parseFloat(document.getElementById('num1').value) || 0;
+            var num2 = parseFloat(document.getElementById('num2').value) || 0;
+            var num3 = parseFloat(document.getElementById('num3').value) || 0;
+            var num4 = parseFloat(document.getElementById('num4').value) || 0;
+            var num5 = parseFloat(document.getElementById('num5').value) || 0;
+
+            var totalSum = num1 + num2 + num3 + num4 + num5;
+            var internalValue = num1 + (num2 + num3 + num4 + num5) * 0.2;
+
+            document.getElementById('result').innerHTML = '멀티 배율 : ' + internalValue + '%' +
+                '<br>내부합 : ' + totalSum;
+        }
+
+        document.getElementById('num1').addEventListener('input', calculateResult);
+        document.getElementById('num2').addEventListener('input', calculateResult);
+        document.getElementById('num3').addEventListener('input', calculateResult);
+        document.getElementById('num4').addEventListener('input', calculateResult);
+        document.getElementById('num5').addEventListener('input', calculateResult);
+    </script>
+</body>
+</html>
